@@ -7,7 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Slider;
+namespace Customer;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -46,16 +46,16 @@ class Module
     {
     	return array(
     			'factories' => array(
-    					'Slider\Model\SliderTable' =>  function($sm) {
-    						$tableGateway = $sm->get('SliderTableGateway');
+    					'Customer\Model\CustomerTable' =>  function($sm) {
+    						$tableGateway = $sm->get('CustomerTableGateway');
     						$table = new SliderTable($tableGateway);
     						return $table;
     					},
-    					'SliderTableGateway' => function ($sm) {
+    					'CustomerTableGateway' => function ($sm) {
     						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
     						$resultSetPrototype = new ResultSet();
     						$resultSetPrototype->setArrayObjectPrototype(new Slider());
-    						return new TableGateway('slider', $dbAdapter, null, $resultSetPrototype);
+    						return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
     					},
     			),
     	);

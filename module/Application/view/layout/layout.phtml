@@ -16,7 +16,11 @@
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
                                       ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
+                                      ->prependFile($this->basepath() . '/js/custom.js')
+                                      ->prependFile($this->basepath() . '/js/jquery.bpopup.min.js')
+                                      ->prependFile($this->basePath() . '/js/jquery.min.js')
+                                      
+                                         ?>
 
     </head>
     <body>
@@ -33,6 +37,8 @@
                         <ul class="nav">
                             <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                              <li><a href="<?php echo $this->url('slider') ?>"><?php echo $this->translate('Slider') ?></a></li>
+                             <li><a href="<?php echo $this->url('customer') ?>"><?php echo $this->translate('Customer') ?></a></li>
+                             <li><a href="javascript::void(0);" id="btn-login"><?php echo $this->translate('login') ?></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -46,5 +52,7 @@
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
+        <?php echo $this->partial('partials/loginForm.phtml')?>
+        
     </body>
 </html>

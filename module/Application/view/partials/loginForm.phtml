@@ -1,0 +1,11 @@
+<div id="form-login" >
+     <form action="<?php echo $this->url('customer/login')?>" method="post">
+         <h4>Form login</h4>
+         <label for="username"><?php echo $this->translate("UserName")?></label>
+         <input type="text" id="username" name="username" class="i-text" />
+         <label for="password"><?php echo $this->translate("Password")?></label>
+         <input type="password" id="password" name="password" class="i-text" /><br>
+         <input type="submit" class="btn btn-success" value="<?php echo $this->translate("Login")?>" id="btn-submit" />
+         <input type="checkbox" > Remember me?
+     </form>
+</div>

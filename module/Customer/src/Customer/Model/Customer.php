@@ -1,6 +1,6 @@
 <?php
-namespace Slider\Model;
-class Slider{
+namespace Customer\Model;
+class Customer{
     public $id;
     public $title;
     public $image;
