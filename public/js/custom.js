@@ -3,7 +3,7 @@ $(function(){
 		 e.preventDefault();
 		$("#form-login").bPopup({
 			modalClose: false,
-			zIndex: 2,
+			zIndex: 9999,
 			onClose: function(){
 				
 			}
