@@ -13,8 +13,8 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
-use Slider\Model\Slider;
-use Slider\Model\SliderTable;
+use Customer\Model\Customer;
+use Customer\Model\CustomerTable;
 
 class Module
 {
@@ -48,13 +48,13 @@ class Module
     			'factories' => array(
     					'Customer\Model\CustomerTable' =>  function($sm) {
     						$tableGateway = $sm->get('CustomerTableGateway');
-    						$table = new SliderTable($tableGateway);
+    						$table = new CustomerTable($tableGateway);
     						return $table;
     					},
     					'CustomerTableGateway' => function ($sm) {
     						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
     						$resultSetPrototype = new ResultSet();
-    						$resultSetPrototype->setArrayObjectPrototype(new Slider());
+    						$resultSetPrototype->setArrayObjectPrototype(new Customer());
     						return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
     					},
     			),

@@ -1,11 +1,14 @@
 <div id="form-login" >
-     <form action="<?php echo $this->url('customer/login')?>" method="post">
+     <form action="<?php echo $this->url('customer/login')?>" method="post" id="f-login">
          <h4>Form login</h4>
+         <span class="error" id="loginfail"></span>
          <label for="username"><?php echo $this->translate("UserName")?></label>
-         <input type="text" id="username" name="username" class="i-text" />
+         <input type="text" id="username" name="username" class="i-text" /><br>
+         <span class="error-username error"></span>
          <label for="password"><?php echo $this->translate("Password")?></label>
          <input type="password" id="password" name="password" class="i-text" /><br>
-         <input type="submit" class="btn btn-success" value="<?php echo $this->translate("Login")?>" id="btn-submit" />
+         <span class="error-password error"></span>
+         <input type="submit" class="btn btn-success btn-login" value="<?php echo $this->translate("Login")?>" id="btn-submit" />
          <input type="checkbox" > Remember me?
      </form>
 </div>

@@ -1,7 +1,7 @@
 <?php
 namespace ServiceLibrary\Model;
-
 use Zend\Db\TableGateway\TableGateway;
+
 class ServiceModel{
     protected $tableGateway;
     
@@ -21,6 +21,20 @@ class ServiceModel{
     		throw new \Exception("Could not find row $id");
     	}
     	return $row;
+    }
+    
+    public function save($data) {
+    	if(!isset($data['id'])){
+    	      if(!$this->tableGateway->insert($data))
+    	          return false;
+    	         return $this->tableGateway->getLastInsertValue();
+    	}else{
+    		$id = (int)$data['id'];
+    		if (!$this->tableGateway->update($data, array('id' => $id)))
+    			return false;
+    		return $id;
+    	}
+        return false;
     }
     
     public function delete($id)

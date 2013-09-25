@@ -24,4 +24,8 @@ class IndexController extends ServiceController
         $data = $this->getCollection()->getAll();
         return new ViewModel(array('data'=>$data));
     }
+    
+    function testAction(){
+        return new ViewModel();
+    }
 }

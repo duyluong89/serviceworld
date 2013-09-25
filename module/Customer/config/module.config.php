@@ -64,23 +64,40 @@ return array(
                     				),
                     		),
                     ),
+                   
                     
                 ),
+                
             ),
+            'register' => array(
+            		'type'    => 'Literal',
+            		'options' => array(
+            				'route'    => '/register',
+            				'constraints' => array(
+            						'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+            						'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+            				),
+            				'defaults' => array(
+            				        '__NAMESPACE__' => 'Customer\Controller',
+            						'controller' =>'Register',
+            						'action'=>'register',
+            				),
+            		),
+            ),
+            
         ),
     ),
     'controllers' => array(
         'invokables' => array(
             'Customer\Controller\Index' => 'Customer\Controller\IndexController',
-            'Customer\Controller\Login' => 'Customer\Controller\LoginController'
+            'Customer\Controller\Login' => 'Customer\Controller\LoginController',
+            'Customer\Controller\Register' => 'Customer\Controller\RegisterController'
         ),
     ),
     'view_manager' => array(
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
         'template_map' => array(
             'customer/index/index' => __DIR__ . '/../view/customer/index/index.phtml',
+            'customer/register/register' => __DIR__ . '/../view/customer/register/register.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
