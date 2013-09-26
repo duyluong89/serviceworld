@@ -42,14 +42,14 @@ $(function(){
 				data: dataPost
 			}).done(function(msg){
 				if(msg.response !== false){
-					//$("#btn-login").html(msg.user.userName);
+					$("#btn-login").html('Welcome ' + msg.user.userName + '!');
 					$("#form-login").bPopup().close();
 				}else{
 					msg = "Login fail!, please check your username or password"; 
 					$('#loginfail').append(msg);
 				}
 			}).fail(function(){
-				
+				alert('login fail!');
 			});
 		}
 		return false;
