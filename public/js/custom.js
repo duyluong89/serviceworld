@@ -60,4 +60,6 @@ $(function(){
 	$('#password').change(function(){
 		$('.error-password').empty();
 	});
+	
+	$('.table').dataTable();
 });

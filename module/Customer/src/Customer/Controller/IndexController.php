@@ -22,7 +22,7 @@ class IndexController extends ServiceController
     public function indexAction()
     {
         $data = $this->getCollection()->getAll();
-        return new ViewModel(array('data'=>$data));
+        return new ViewModel(array('customers'=>$data));
     }
     
     function testAction(){
