@@ -43,8 +43,9 @@
                              <li><a href="<?php echo $this->url('customer') ?>"><?php echo $this->translate('Customer') ?></a></li>
                              </ul>
                         <ul class="nav f-right">
-                            <?php if(isset($_SESSION['userLogined'])):?>
-                            <li><a href="javascript::void(0);"><?php echo $this->translate('Welcome ') . $_SESSION['userLogined']->userName . "!" ?></a></li>
+                        <?php $userLogined = $_SESSION['user']['logined'];  ?>
+                            <?php if(is_object($userLogined)):?>
+                            <li><a href="javascript::void(0);"><?php echo $this->translate('Welcome ') . $userLogined->userName . "!" ?></a></li>
                             <?php else: ?>
                             <li><a href="javascript::void(0);" id="btn-login"><?php echo $this->translate('Login') ?></a></li>
                             <?php endif?>

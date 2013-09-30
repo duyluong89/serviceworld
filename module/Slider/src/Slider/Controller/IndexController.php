@@ -23,4 +23,12 @@ class IndexController extends ServiceController
         $data = $this->getCollection()->getAll();
         return new ViewModel(array('data'=>$data));
     }
+    
+    public function add(){
+        if($this->getRequest()->isPost()){
+            
+        }
+        
+        return new ViewModel();
+    }
 }
