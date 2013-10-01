@@ -34,7 +34,9 @@ class LoginController extends ServiceController
 	    
 	}
 	
-	public function logout(){
-	    
+	public function logoutAction(){
+	    $user_session = new Container('user');
+	    $user_session->getManager()->destroy();
+	    $this->redirect()->toRoute('home');
 	}
 }

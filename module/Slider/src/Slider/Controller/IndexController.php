@@ -11,12 +11,17 @@ namespace Slider\Controller;
 
 use Zend\View\Model\ViewModel;
 use ServiceLibrary\Controller\ServiceController;
+use Slider\Form\AddSlider;
 
 class IndexController extends ServiceController
 {
+    protected $form;
+    protected $validation;
     public function __construct(){
         parent::__construct();
         $this->setModel('Slider\Model\SliderTable');
+        $this->form = new AddSlider();
+        
     }
     public function indexAction()
     {
@@ -24,11 +29,10 @@ class IndexController extends ServiceController
         return new ViewModel(array('data'=>$data));
     }
     
-    public function add(){
+    public function addAction(){
         if($this->getRequest()->isPost()){
             
         }
-        
-        return new ViewModel();
+        return new ViewModel(array('form'=>$this->form));
     }
 }
