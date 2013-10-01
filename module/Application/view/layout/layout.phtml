@@ -1,4 +1,5 @@
-<?php echo $this->doctype(); ?>
+<?php use Zend\Session\Container;
+echo $this->doctype(); ?>
 
 <html lang="en">
     <head>
@@ -43,13 +44,18 @@
                              <li><a href="<?php echo $this->url('customer') ?>"><?php echo $this->translate('Customer') ?></a></li>
                              </ul>
                         <ul class="nav f-right">
-                        <?php $userLogined = $_SESSION['user']['logined'];  ?>
+                        <?php 
+                            $session_user = new Container('user');
+                            $userLogined = $session_user->logined;  ?>
                             <?php if(is_object($userLogined)):?>
                             <li><a href="javascript::void(0);"><?php echo $this->translate('Welcome ') . $userLogined->userName . "!" ?></a></li>
                             <?php else: ?>
                             <li><a href="javascript::void(0);" id="btn-login"><?php echo $this->translate('Login') ?></a></li>
+                            <li><a href="<?php echo $this->url('register')?>"><?php echo $this->translate('Register') ?></a></li>
                             <?php endif?>
-                             <li><a href="<?php echo $this->url('register')?>"><?php echo $this->translate('Register') ?></a></li>
+                              <?php if(is_object($userLogined)):?>
+                            <li><a href="javascript::void(0);"><?php echo $this->translate('Logout ')  ?></a></li>
+                           <?php endif?>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

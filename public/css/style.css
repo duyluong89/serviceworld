@@ -66,3 +66,4 @@ color: red;display: block;}
 .row input[type=submit]{float:right;}
 .clear{clear:both;}
 .nav.f-right{float:right}
+.nav.f-right li a{padding: 10px 5px 10px; font-size:11px;}

@@ -2,6 +2,7 @@
 namespace Customer\Controller;
 use ServiceLibrary\Controller\ServiceController;
 
+
 class RegisterController extends ServiceController
 {
     protected $form;
@@ -41,6 +42,6 @@ class RegisterController extends ServiceController
 	        	$this->redirect()->toRoute('customer');
 	        }
 	    }    
-        return array('form'=>$this->form);
+	    return array('form'=>$this->form);
 	}
 }

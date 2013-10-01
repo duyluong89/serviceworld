@@ -33,4 +33,8 @@ class LoginController extends ServiceController
 	    return $response;
 	    
 	}
+	
+	public function logout(){
+	    
+	}
 }
