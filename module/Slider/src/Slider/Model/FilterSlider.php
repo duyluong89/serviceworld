@@ -11,6 +11,7 @@ class FilterSlider implements InputFilterAwareInterface
 	public $id;
 	public $title;
 	public $image;
+	public $inputFilter;
 	
 	public function exchangeArray($data)
 	{

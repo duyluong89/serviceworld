@@ -1,5 +1,23 @@
 <a href="<?php echo $this->url("slider/default", array('action'=>'add', 'controller'=>'index'))?>"><?php echo $this->translate("Add Slider")?></a>
-<?php foreach ($data as $slider){
-	
-    echo $slider->title . '<br />';
-}?>
+<table class="table">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>State</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->data as $key => $value): ?>
+        <tr>
+            <td><?php echo $value->id?></td>
+            <td><?php echo $value->title?></td>
+            <td><?php echo $value->state?></td>
+            <td><a href="<?php echo $this->url('slider/default',array('action'=>'edit', 'controller'=>'index','id' => $value->id));?>" >Edit</a>
+                <a href="<?php echo $this->url('slider/default',array('action'=>'delete', 'controller'=>'index', 'id' => $value->id));?>" >Delete</a>
+            </td>
+        </tr>
+       <?php endforeach;?>
+    </tbody>
+</table>

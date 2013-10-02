@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Full Name</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->customers as $key => $value): ?>
+        <tr>
+            <td><?php echo $value->id?></td>
+            <td><?php echo $value->userName?></td>
+            <td><?php echo $value->firstName . ' ' . $value->lastName?>
+            </td>
+        </tr>
+       <?php endforeach;?>
+    </tbody>
+</table>

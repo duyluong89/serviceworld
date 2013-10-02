@@ -58,20 +58,12 @@ class AddSlider extends Form{
     	$this->add(array(
     			'name' => 'order',
     			'attributes' => array(
-    					'type' => 'text'
+    					'type' => 'number'
     			)
     	));
     	$this->add(array(
     			'name' => 'state',
-    			'type' => 'Select',
-    			'options' => array(
-    					'empty_option' => 'Please choose your state',
-    					'value_options' => array(
-    							'1' => 'Active',
-    							'0' => 'DeActive'
-    					)
-    			)
-    
+    			'type' => 'checkbox',
     	));
     
     	$this->add(array(
