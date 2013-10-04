@@ -1,0 +1,15 @@
+<?php 
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+echo $this->formrow($this->form->get('id'));
+echo $this->formrow($this->form->get('name'));
+echo $this->formrow($this->form->get('parent'));
+echo $this->formrow($this->form->get('description'));
+echo $this->formrow($this->form->get('styleClass'));
+echo $this->formrow($this->form->get('order'));
+echo $this->formrow($this->form->get('state'));
+echo $this->formrow($this->form->get('addCategory'));
+echo $this->formrow($this->form->get('createdDate'));
+echo $this->formrow($this->form->get('createdBy'));
+echo $this->form()->closeTag($this->form);
+?>
